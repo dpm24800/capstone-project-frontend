@@ -1,0 +1,174 @@
+:root {
+  --green: #2f6b3c;
+  --green-light: #e8f2ec;
+  --border: #c9dfd0;
+  --text-dark: #1f2d24;
+  --text-muted: #6c7f73;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* Page layout */
+.page {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 100vh;
+}
+
+/* Left video section */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right content section */
+.content {
+  display: flex;
+  align-items: center;
+  padding: 64px;
+}
+
+.content-inner {
+  max-width: 480px;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo span {
+  font-weight: 600;
+  color: var(--green);
+}
+
+/* Heading */
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+/* Subtitle */
+.subtitle {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #9aa9a0;
+}
+
+input:focus {
+  border-color: var(--green);
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e0eae4;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid var(--green);
+  background: #fff;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn + .btn {
+  margin-top: 12px;
+}
+
+.btn.primary {
+  background: var(--green-light);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 40px 24px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+}

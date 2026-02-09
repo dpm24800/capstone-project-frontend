@@ -1,0 +1,149 @@
+/* =========================
+   RESET
+========================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+:root {
+  --hero-green: #4f7f4c;
+  --text-white: #ffffff;
+  --overlay-dark: rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #000;
+  color: var(--text-white);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Video background */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark);
+  z-index: 1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  position: relative;
+  z-index: 2;
+  padding: 24px 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+.hero-content {
+  position: absolute;
+  right: 80px;
+  bottom: 120px;
+  z-index: 2;
+  max-width: 520px;
+}
+
+.hero-title {
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 180px;
+  height: 48px;
+
+  background: var(--hero-green);
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .hero-content {
+    right: 40px;
+    bottom: 80px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 90vh;
+  }
+
+  .hero-content {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 120px 24px 0;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+}
